@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import AddMenuScreen from './screens/AddMenuScreen';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [menuItems, setMenuItems] = useState([
+    { name: 'Cheeseburger', description: 'Juicy grilled beef patty with melted cheddar cheese.', price: 9.99, course: 'Main' },
+    { name: 'Caesar Salad', description: 'Crispy romaine lettuce with creamy Caesar dressing.', price: 7.99, course: 'Starter' },
+    { name: 'Chocolate Lava Cake', description: 'Warm chocolate cake with a molten chocolate center.', price: 5.99, course: 'Dessert' },
+    { name: 'Grilled Salmon', description: 'Perfectly grilled salmon served with lemon butter sauce.', price: 12.99, course: 'Main' },
+    { name: 'French Onion Soup', description: 'Rich beef broth with caramelized onions and melted cheese.', price: 6.99, course: 'Starter' },
+  ]);
+
+  const addMenuItem = (item) => {
+    setMenuItems((prevItems) => [...prevItems, item]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app-container">
+        {/* Header */}
+        <header className="app-header">
+          <h1 className="app-title">Chef's Menu App</h1>
+        </header>
+
+        {/* Routes */}
+        <main className="app-content">
+          <Routes>
+            <Route path="/" element={<HomeScreen menuItems={menuItems} />} />
+            <Route path="/add-menu" element={<AddMenuScreen addMenuItem={addMenuItem} />} />
+          </Routes>
+        </main>
+
+        {/* Bottom Navigation */}
+        <nav className="bottom-nav">
+          <Link to="/" className="nav-item">
+            <span className="material-icons">home</span>
+            <p>Home</p>
+          </Link>
+          <Link to="/add-menu" className="nav-item">
+            <span className="material-icons">add_circle</span>
+            <p>Add Menu</p>
+          </Link>
+        </nav>
+      </div>
+    </Router>
   );
 }
-
-export default App;
