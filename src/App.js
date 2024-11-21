@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { FaHome, FaPlusCircle, FaFilter } from 'react-icons/fa'; // Import icons
 import HomeScreen from './screens/HomeScreen';
 import AddMenuScreen from './screens/AddMenuScreen';
 import FilterByCourseScreen from './screens/FilterByCourseScreen';
@@ -38,15 +39,15 @@ export default function App() {
         {/* Bottom Navigation */}
         <nav className="bottom-nav">
           <Link to="/" className="nav-item">
-            <span className="material-icons">home</span>
+            <FaHome className="nav-icon" />
             <p>Home</p>
           </Link>
           <Link to="/add-menu" className="nav-item">
-            <span className="material-icons">add_circle</span>
+            <FaPlusCircle className="nav-icon" />
             <p>Add Menu</p>
           </Link>
           <Link to="/filter-by-course" className="nav-item">
-            <span className="material-icons">filter_list</span>
+            <FaFilter className="nav-icon" />
             <p>Filter</p>
           </Link>
         </nav>
