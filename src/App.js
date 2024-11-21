@@ -24,7 +24,7 @@ export default function App() {
       <div className="app-container">
         {/* Header */}
         <header className="app-header">
-          <h1 className="app-title">Chef's Menu App</h1>
+          <h1 className="app-title">Mishen Naidoos Menu App</h1>
         </header>
 
         {/* Routes */}
