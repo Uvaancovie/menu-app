@@ -164,3 +164,51 @@ button {
 button:hover {
   background-color: #e6b800;
 }
+/* Filter by Course Screen */
+.filter-container {
+  text-align: center;
+}
+
+.filter-label {
+  display: block;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #ffcc00;
+}
+
+.menu-section {
+  margin-top: 20px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  color: #ffcc00;
+}
+
+.menu-item p {
+  color: #ccc;
+}

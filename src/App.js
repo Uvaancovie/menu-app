@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import AddMenuScreen from './screens/AddMenuScreen';
+import FilterByCourseScreen from './screens/FilterByCourseScreen';
 import './App.css';
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomeScreen menuItems={menuItems} />} />
             <Route path="/add-menu" element={<AddMenuScreen addMenuItem={addMenuItem} />} />
+            <Route path="/filter-by-course" element={<FilterByCourseScreen menuItems={menuItems} />} />
           </Routes>
         </main>
 
@@ -42,6 +44,10 @@ export default function App() {
           <Link to="/add-menu" className="nav-item">
             <span className="material-icons">add_circle</span>
             <p>Add Menu</p>
+          </Link>
+          <Link to="/filter-by-course" className="nav-item">
+            <span className="material-icons">filter_list</span>
+            <p>Filter</p>
           </Link>
         </nav>
       </div>
